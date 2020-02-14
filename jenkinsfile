@@ -1,0 +1,22 @@
+pipeline
+{ 
+  agent any
+  stages
+  {
+    stage("Build")
+    {
+     steps
+     {
+       checkout scm
+     }
+   }
+   stage("static_analysis")
+   {
+      steps
+      {
+        echo "$names"
+        sh label: '', script: 'sh shell.sh $names'
+       }
+   }
+  }
+}
