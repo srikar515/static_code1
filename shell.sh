@@ -25,5 +25,5 @@ do
 	done 
 done
 cd $JENKINS_HOME/workspace/$JOB_NAME/
-export PATH=/usr/local/bin
-./node_modules/.bin/eslint  -f json -c $JENKINS_HOME/workspace/eslintrc.json static_code1/*  -o $JENKINS_HOME/workspace/$JOB_NAME/result.json || echo "lint failed but continiung the process"
+export PATH=/usr/local/bin/node_modules/.bin
+eslint  -f json -c $JENKINS_HOME/workspace/eslintrc.json static_code1/*  -o $JENKINS_HOME/workspace/$JOB_NAME/result.json || echo "lint failed but continiung the process"
