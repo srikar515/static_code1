@@ -16,7 +16,7 @@ pipeline
       {
         echo "$names"
         sh label: '', script: 'sh shell.sh $names'
-        sh label: '', script: 'curl -X POST -d @result.json https://devopsiotdemo.service-now.com/api/x_snc_devops_iot/get_static_analysis_report_from_device/capture --header "Content-Type:application/json" --header "Authorization: Bearer s54CXPeEvfOfb_VZKXu11jvVsEmEnE9kiCwO5jpmMKFcWxllsrI5F4IHppb-07zzFXaV3VrIZOTHotR-MeOS1A" -d scanid=$scanID'
+        sh label: '', script: 'curl -X POST -d @result.json https://devopsiotdemo.service-now.com/api/x_snc_devops_iot/get_static_analysis_report_from_device/capture?scanID=scanID&branchID=branchID --header "Content-Type:application/json" --header "Authorization: Bearer s54CXPeEvfOfb_VZKXu11jvVsEmEnE9kiCwO5jpmMKFcWxllsrI5F4IHppb-07zzFXaV3VrIZOTHotR-MeOS1A" -d scanid=$scanID'
       }
    }
   }
