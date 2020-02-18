@@ -16,7 +16,7 @@ pipeline
       {
         echo "$names"
         sh label: '', script: 'sh shell.sh $names'
-        sh label: '', script: 'curl -X POST -d @result.json https://devopsiotdemo.service-now.com/api/x_snc_devops_iot/get_static_analysis_report_from_device/capture?scanId={$scanID}&branchID={$branchID} --header "Content-Type:application/json"'
+        sh label: '', script: 'curl -X POST -d @result.json https://devopsiotdemo.service-now.com/api/x_snc_devops_iot/get_static_analysis_report_from_device/capture --header "Content-Type:application/json"'
       }
    }
   }
